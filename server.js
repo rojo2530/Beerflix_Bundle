@@ -2,13 +2,31 @@
 const express = require('express');
 const { join } = require('path');
 const PORT = process.env.PORT || 7000;
+const expressStaticGzip = require('express-static-gzip');
 
 const app = express();
 
-app.use(express.static('src'));
+// app.use(express.static('dist'));
+// app.use('/', expressStaticGzip('dist'));
+app.use('/', expressStaticGzip('dist', {
+	enableBrotli: true,
+	customCompressions: [{
+		encodingName: 'deflate',
+		fileExtension: 'zz'
+	}],
+	orderPreference: ['br']
+}));
+// app.use('/', expressStaticGzip('dist'), {
+// 	enableBrotli: true
+// });
+
+
 
 app.get('/*', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+	console.log('entra');
+
+	res.sendFile(join(__dirname, 'dist', 'index.html'));
+
 });
 
 app.listen(PORT, () => {

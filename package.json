@@ -8,7 +8,8 @@
     "start": "node server.js",
     "lint": "./node_modules/.bin/eslint src",
     "parcel:server": "parcel index.html --open",
-    "parcel:build": "parcel build index.html"
+    "parcel:build": "parcel build index.html",
+    "heroku-postbuild": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +18,16 @@
     "axios": "^0.19.0",
     "bulma": "^0.7.5",
     "express": "^4.17.1",
+    "express-static-gzip": "^2.0.5",
     "page": "^1.11.4"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "eslint": "^6.3.0",
-    "parcel-bundler": "^1.12.3"
-  }
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-compress": "^1.0.10"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }

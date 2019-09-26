@@ -1,0 +1,27 @@
+{
+  "name": "beeFront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint src",
+    "parcel:server": "parcel index.html --open",
+    "parcel:build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bulma": "^0.7.5",
+    "express": "^4.17.1",
+    "page": "^1.11.4"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^6.3.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
